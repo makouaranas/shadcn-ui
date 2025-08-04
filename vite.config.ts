@@ -4,17 +4,15 @@ import path from "path";
 import { viteSourceLocator } from "@metagptx/vite-plugin-source-locator";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
+  base: "/shadcn-ui/", // <-- This must be at the root, not inside resolve
   plugins: [
-    viteSourceLocator({
-      prefix: "mgx",
-    }),
+    viteSourceLocator({ prefix: "mgx" }),
     react(),
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  base: "/shadcn-ui"
   },
-}));
+});
