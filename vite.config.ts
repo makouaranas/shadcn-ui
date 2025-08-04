@@ -5,7 +5,7 @@ import { viteSourceLocator } from "@metagptx/vite-plugin-source-locator";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/shadcn-ui/", // <-- This must be at the root, not inside resolve
+  base: "/shadcn-ui", // <-- This must be at the root, not inside resolve
   plugins: [
     viteSourceLocator({ prefix: "mgx" }),
     react(),
